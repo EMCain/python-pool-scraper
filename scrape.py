@@ -8,6 +8,22 @@
 
 import requests, bs4, re
 
+class PageScraper:
+	def __init__(self, url=None, file=None):
+		"""Keyword Arguments:
+		url - a string indicating an URL on the web
+		file - if using own HTML file, pass in a File object
+		"""
+		if url:
+			self.url = url
+			self.get_page_from_url(self, url)
+		if file: 
+			self.file = file
+			self.get_page_from_file(self, file)
+		if not file and not url:
+			raise InputError('need url or file')
+	
+
 class TableScraper:
 	def __init__(self, table):
 		"""Keyword Arguments:
@@ -15,13 +31,34 @@ class TableScraper:
 		"""
 		self.table = table
 		
+		self.list_of_lists = []				
+		
+		
 	def __str__(self):
 		if self.table.get("id"):
-			return "table id " + str(self.table.get("id"))
+			return "table id=" + str(self.table.get("id"))
 		else:
-			return None
+			return "table without id"
 			
-	
+
+	#this puts a text string in the list of lists to be processed later. What if I could do the conversion to a dictionary of times upfront?
+	def scrape_row(self, row):
+		for i in range(0, len(row.select('td')), 1):	
+			if list_of_lists[i] is None:
+				list_of_lists.append([])
+				# will eventually be making a list_of_dicts instead
+			else:
+				try:
+					# replace this with a function that creates a dictionary entry as below. 
+					list_of_lists[i].append(str(row[i].text.encode('UTF-8')))
+				except:
+					list_of_lists[i].append('err')				
+		
+			
+	def scrape_cell(self, cell):
+		
+
+			
 
 # eventually I will take some data from this page...
 
