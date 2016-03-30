@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+    {% if session.logged_in %}
+<h1>ADD POOL</h1>
+        <form action="{{ url_for('add_pool') }}" method="post" class="add-pool">
+            <label for="id_name">Pool Name: </label>
+            <input id="id_name" name="name" type="text">
+
+            <label for="id_address">Address: </label>
+            <input id="id_address" name="address" type="text">
+
+            <label for="id_city">City: </label>
+            <input id="id_city" name="city" type="text">
+
+            <label for="id_zip_code">Zip Code: </label>
+            <input id="id_zip_code" name="zip_code" type="text">
+
+            <!-- TODO make this a dropdown menu-->
+            <label for="id_neighborhood">Neighborhood: </label>
+            <input id="id_neighborhood" name="neighborhood" type="text">
+
+            <input type="submit" value="Save">
+
+        </form>
+
+    {% endif %}
+<h1>Pools list: </h1>
+        {% for pool in pools %}
+            <h2>{{ pool.name }}</h2>
+            <p>{{ pool.address }}, {{ pool.city }} {{ pool.zip_code}}</p>
+            <p><strong>{{ pool.neighborhood }}</strong></p>
+            <br>
+        {% else %}
+            <p>Sorry, there are no pools listed.</p>
+        {% endfor %}
+
+
+{% endblock %}

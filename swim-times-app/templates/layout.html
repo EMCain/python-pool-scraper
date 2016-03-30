@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portland Public Pools</title>
+</head>
+<body>
+
+<!--someday...layout and style. But not today. -->
+<h1>Portland Public Swimming Pools</h1>
+{% if not session.logged_in %}
+    <a href="{{ url_for('login') }}">log in</a>
+{% else %}
+    <a href="{{ url_for('logout') }}">log out</a>
+{% endif %}
+{% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+{% endfor %}
+{% block body %}{% endblock %}
+</body>
+</html>

@@ -1,6 +1,15 @@
 # PURPOSE: to scrape the various Portland Parks sites for public swimming pool schedules and update the project database.
 # This will be a Flask project, so I'm outlining these functions with this in mind. 
 
+# 06 Mar 2016 - beginning to flesh out the functions now. 
+
+import re
+import requests
+
+from bs4 import BeautifulSoup
+
+
+
 # I'm starting out with comments describing the functions, plus the planned inputs and outputs for each function.
 
 pages = # some list of page urls 
