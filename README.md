@@ -4,7 +4,7 @@ A project to extract and use swimming pool schedules from https://www.portlandor
 Changes 3/23/16
 
 Done: 
-	* I began creating a Flask application, swim-times-app. It is loosly based on the Flask tutorial at http://flask.pocoo.org/docs/0.10/tutorial/
+	* I began creating a Flask application, swim-times-app. It is loosely based on the Flask tutorial at http://flask.pocoo.org/docs/0.10/tutorial/
 	* The swim-times-app currently contains SQLite schema for the Pools table, an admin login, and the means to add new pools while logged in as admin.
 
 Next steps:
