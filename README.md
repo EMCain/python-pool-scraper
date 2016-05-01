@@ -10,6 +10,7 @@ Done:
 	* Key components: 
 		-basic calendar layout styled to align columns side-by-side (thanks to Nic Hampton for CSS help with this)
 		-each column and event div within the column is styled using a custom "style" attribute. This will allow for a Jinja template to autogenerate the heights and starting position of the event divs based on start and end times passed in via views. 
+	* created Activities table and a sample view (need to debug that page though)
 		
 Next Steps:
 	* create a test view using sample data that passes in the relevant data for an imaginary query.
@@ -17,7 +18,7 @@ Next Steps:
 	* write the Jinja template to render that view as an HTML page in the style of sample-calendar-styled.html
 
 Future Remaining Tasks: 
-	* add in the relevant database tables, Events and Activities
+	* add in the relevant database table Events 
 	* hardcode a couple example queries
 	* create a query-builder interface that users can use to customize their queries
 	
