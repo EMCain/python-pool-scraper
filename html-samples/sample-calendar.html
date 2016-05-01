@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.schedule{
+			width: 1000px;
+			height: 500px;
+			border-style: double;
+			border-color: black;
+		}
+		
+		.column {
+			vertical-align: middle;
+			display: inline-block;
+			width: 200px; 
+			/*height: 90%;*/
+			margin: 10px;
+		}
+		
+		.column div{
+			background-color: green;
+			/*height: 100%;*/
+			width: 100%;
+		}
+		
+		.column:after { 
+		// makes them line up "clearfix"
+			display: block;
+			content: " ";
+			clear: both;
+		}
+		
+		#start {
+			color: white;
+			height: 300px;
+			background-color: blue;
+		}
+		
+		#middle {
+			
+			height: 150px;
+			background-color: purple;
+		}
+		
+		#end {
+			height: 55%;
+		}
+		.middle {
+		padding-top: 200px;
+		}
+		
+	</style>
+</head>
+<body>
+<div class="schedule">
+	<div class="column">
+		<div id="start">text</div>
+	</div>
+	<div class="column middle">
+		<div id="middle">text</div>
+	</div>
+	<div class="column">
+		<div id="end">text</div>
+
+	</div>
+</div>
+
+</body>
+
+</html>

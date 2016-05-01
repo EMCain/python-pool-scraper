@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="css/general-styles.css" rel="stylesheet">
+
+	<style>
+		
+		
+		#start {
+			background-color: blue;
+		}
+		
+		#middle {
+			background-color: purple;
+		}
+		#middle-2{
+			background-color: maroon;
+		}
+		
+
+
+	</style>
+</head>
+<body>
+<pre>
+Proof of concept: general styles for the calendar are in general-styles.css, while the styles conveying info about each event are coded into the html. 
+
+This will allow for a Jinja template to dynamically create the calendar elements for each event depending on start and end times.
+
+Thanks to NicolasJHampton for help with the CSS :)
+</pre>
+<div class="schedule">
+	<div class="column">
+		<div id="start" style="height:300px">first event</div>
+		<div id="start-2" style="height: 75px; margin-top: 60px">second event</div>
+	</div>
+		
+
+	<div class="column" style="padding-top: 200px;">
+		<div id="middle" style="height: 150px;
+">first event</div>
+		<div id="middle-2" style="height: 75px;">second event</div>
+	</div>
+	<div class="column" style="padding-top: 300px;">
+		<div id="end" style="height: 150px;
+">first event</div>
+
+	</div>
+</div>
+
+</body>
+
+</html>

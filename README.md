@@ -1,6 +1,26 @@
 # python-pool-scraper
 A project to extract and use swimming pool schedules from https://www.portlandoregon.gov/parks. Built in Python using Flask and BeautifulSoup.
 
+<pre>
+
+Changes 4/28/16
+
+Done:
+	* Created a frontend proof of concept at html-samples/sample-calendar-styled.html
+	* Key components: 
+		-basic calendar layout styled to align columns side-by-side (thanks to Nic Hampton for CSS help with this)
+		-each column and event div within the column is styled using a custom "style" attribute. This will allow for a Jinja template to autogenerate the heights and starting position of the event divs based on start and end times passed in via views. 
+		
+Next Steps:
+	* create a test view using sample data that passes in the relevant data for an imaginary query.
+	* example: for a single pool and activity, pass in the weekly schedule. i.e. show the weekly schedule of Adult Lap Swim at Grant Pool.
+	* write the Jinja template to render that view as an HTML page in the style of sample-calendar-styled.html
+
+Future Remaining Tasks: 
+	* add in the relevant database tables, Events and Activities
+	* hardcode a couple example queries
+	* create a query-builder interface that users can use to customize their queries
+	
 Changes 3/23/16
 
 Done: 
@@ -13,7 +33,7 @@ Next steps:
 	* Add some sort of simple display for anyone (admin or not) to see the schedule
 	* Complete the scraper code in other sections of the project to feed data into these tables. 
 
-
+-----
 Changes 3/2/16
 
 Done:
@@ -45,3 +65,4 @@ Next steps:
 	Write a scraper that can find the relevant data on a page and find the relevant pages within the portlandoregon.gov site.
 	Create a web app to display the data. Probably Flask, but I'm not committed to anything yet. 
 	
+</pre>	

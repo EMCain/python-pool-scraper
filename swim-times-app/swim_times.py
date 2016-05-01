@@ -45,7 +45,6 @@ def show_pools():
     pools = [dict(name=row[0], address=row[1], city=row[2], zip_code=row[3], neighborhood=row[4]) for row in cur.fetchall()]
     return render_template('show_pools.html', pools=pools)
 
-
 @app.route('/add', methods=['POST'])
 def add_pool():
     print 'adding pool'
@@ -60,6 +59,25 @@ def add_pool():
     flash('New pool was added')
     print 'about to redirect'
     return redirect(url_for('show_pools'))
+
+@app.route('/activities')
+def show_activities():
+    cur = g.db.execute('SELECT * from ACTIVITIES ORDER BY id')
+    activites = [dict(id=row[0], name=row[1]) for row in cur.fetchall()]
+    return render_template('show_activities.html', activites=activites)
+
+@app.route('/add_activity', methods=['POST'])
+def add_activity():
+    print "adding activity"
+    if not session.get('logged_in'):
+        print 'not logged in'
+        abort(401)
+    g.db.execute('INSERT INTO ACTIVITIES (name) values (?)',
+                 [request.form['name']]
+                 )
+    g.db.commit()
+    flash('new activity was added')
+    return redirect(url_for('show_activities'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

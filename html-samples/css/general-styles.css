@@ -1,0 +1,33 @@
+		.schedule{
+			
+			width: 1000px;
+			height: 500px;
+			border-style: double;
+			border-color: black;
+			color: white;
+			background-color: #aaa; 
+			// eventually change to a background that shows horizontal stripes for each quarter-hour
+		}
+		
+		.column {
+			vertical-align: top;
+			display: inline-block;
+			width: 200px; 
+			/*height: 90%;*/
+			margin: 10px;
+		}
+		
+		.column div{
+			background-color: green;
+			/*height: 100%;*/
+			width: 100%;
+			border-style: ridge;
+			border-color: white;
+		}
+		
+		.column:after { 
+		// makes them line up "clearfix"
+			display: block;
+			content: " ";
+			clear: both;
+		}

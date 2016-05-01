@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+    {% if session.logged_in %}
+<h1>ADD POOL</h1>
+        <form action="{{ url_for('add_activity') }}" method="post" class="add-activity">
+            <label for="id_name">Activity Name: </label>
+            <input id="id_name" name="name" type="text">
+
+            <input type="submit" value="Save">
+
+        </form>
+
+    {% endif %}
+<h1>Pools list: </h1>
+        {% for activity in activities %}
+            <p>{{activity.name}}</p>
+        {% else %}
+            <p>Sorry, there are no activities listed.</p>
+        {% endfor %}
+
+
+{% endblock %}
